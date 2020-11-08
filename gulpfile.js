@@ -41,7 +41,7 @@ function buildPages() {
 }
 
 function buildStyles() {
-  return src('src/styles/style.css')
+  return src('src/styles/style.scss')
     .pipe(plumber({
       errorHandler
     }))
@@ -71,7 +71,7 @@ function clearBuild() {
 }
 
 function watchFiles() {
-  watch('src/styles/style.css', buildStyles);
+  watch('src/styles/style.scss', buildStyles);
   watch('src/index.pug', buildPages);
   watch('src/scripts/script.js', buildScripts);
   watch('src/images/*.*', buildImages);
