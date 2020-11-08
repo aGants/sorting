@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Сортировка 
+    link(rel="stylesheet", href="styles/style.css")
+  body
+    mixin item(name, price, img)
+      a(class='main-container-product' data-price=price)
+        span(class='main-container-product__name')= name
+        img(class='main-container-product__img' src=img alt=name)
+        span(class='main-container-product__price')= price+' ₽' 
+    .main
+      .main-buttons
+        button(id='sort-max' class='main-buttons__button') Цена по возрастанию
+        button(id='sort-min' class='main-buttons__button') Цена по убыванию
+      .main-container
+        +item('Crusader Kings III', '930', 'https://cdn.cloudflare.steamstatic.com/steam/apps/1158310/header.jpg?t=1599496226')
+        +item('Cyberpunk 2077', '1999', 'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg?t=1599811554')
+        +item('Dead by Daylight', '499', 'https://cdn.cloudflare.steamstatic.com/steam/apps/381210/header.jpg?t=1600097837')
+        +item('Death Stranding', '3499', 'https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/header.jpg?t=1599584467')
+        +item('RimWorld', '619', 'https://cdn.cloudflare.steamstatic.com/steam/apps/294100/header.jpg?t=1594308831')
+        +item('The Witcher 3: Wild Hunt', '1199', 'https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header_russian.jpg?t=1598535144')
+        +item('The Banner Saga', '750', 'https://cdn.cloudflare.steamstatic.com/steam/apps/237990/header.jpg?t=1589309302')
+        +item('Fallout: New Vegas', '399', 'https://cdn.cloudflare.steamstatic.com/steam/apps/22490/header.jpg?t=1497935499')
+        +item('GreedFall', '1699', 'https://cdn.cloudflare.steamstatic.com/steam/apps/606880/header.jpg?t=1598965326')
+    script(src="scripts/script.js")
